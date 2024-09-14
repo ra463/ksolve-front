@@ -1,0 +1,40 @@
+.d_head {
+    display: flex;
+    border-bottom: 1px solid #77889959;
+    align-items: center;
+    background: #ffb5c2;
+    gap: 10px;
+
+    span {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #ff3f62;
+    }
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+    margin-bottom: 10px;
+
+    a {
+        &:nth-child(1) {
+            button {
+                border: 2px solid #ff3f62;
+            }
+        }
+
+        &:nth-child(2) {
+            button {
+                background: #ff3f62;
+                color: #fff;
+                margin-left: 10px;
+                &:hover {
+                    background: blue;
+                }
+            }
+        }
+    }
+}
