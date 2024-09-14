@@ -142,9 +142,13 @@ const AllClass = () => {
                       colorScheme="teal"
                     >
                       {enrolledClasses &&
-                        enrolledClasses.map((e) =>
-                          e._id === c._id ? "Enrolled" : "Enroll"
-                        )}
+                      enrolledClasses
+                        .map((enroll) => {
+                          return enroll._id;
+                        })
+                        .includes(c._id)
+                        ? "Enrolled"
+                        : "Enroll"}
                     </Button>
                   </div>
                 </div>

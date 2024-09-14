@@ -167,7 +167,7 @@ const AllLecture = () => {
                     Comment Section
                   </h2>
                   <p style={{ marginTop: "1rem" }}>
-                    
+                    <input type="text" />
                   </p>
                 </div>
               </div>
