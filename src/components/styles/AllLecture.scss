@@ -1,21 +1,29 @@
 .course {
     display: flex;
     width: 100%;
-    // margin-top: 3.2rem;
 
     .course-box1 {
-        height: 90vh;
-        overflow: auto;
         width: 65%;
-        padding: 1rem;
+        padding: 0 1rem;
         overflow: auto;
 
         video {
             width: 50rem;
+            // height: 20rem;
+        }
+
+        .details {
+            margin-top: 1rem;
+            border: 1px solid #b5c2d4;
+            padding: 1rem;
+            padding-top: 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
     }
+
     .course-box2 {
-        padding: 1rem;
+        padding: 0 1rem;
         width: 34%;
         display: flex;
         flex-direction: column;
@@ -53,10 +61,10 @@
                 }
             }
             .active {
-                background-color: #ffcc00;
+                background-color: #ff3f62;
 
                 &:hover {
-                    background-color: #ffcc00ce;
+                    background-color: #ff3f62b5;
                     color: white;
                 }
                 p {
@@ -69,6 +77,107 @@
                 margin-top: 0;
             }
         }
+
+        .comment_section {
+            .comment_head {
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 1rem;
+            }
+            .comment {
+                margin-top: 1rem;
+                width: 100%;
+
+                .send {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center;
+                    width: 100%;
+                    gap: 10px;
+
+                    .input {
+                        padding: 10px;
+                        border-radius: 10px;
+                        outline: none;
+                    }
+                }
+            }
+            .all_comments {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                max-height: 14rem;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 10px;
+                border: 1px solid #b5c2d4;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                gap: 10px;
+                width: 100%;
+
+                .comment_body {
+                    display: flex;
+                    flex-direction: column;
+
+                    .comment {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        gap: 5px;
+                        position: relative;
+
+                        .comment_content {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .c {
+                                font-size: 0.9rem;
+                            }
+
+                            .names {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                span {
+                                    font-size: 0.7rem;
+                                    color: #565c65;
+                                }
+
+                                img {
+                                    width: 25px;
+                                    height: 25px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        .reply {
+                            display: flex;
+                            gap: 5px;
+                            align-items: center;
+
+                            svg {
+                                cursor: pointer;
+                            }
+
+                            button {
+                                height: 25px;
+                                width: 30px;
+                                border-radius: 20px;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+
+                    .reply {
+                        margin-left: 2.5rem;
+                    }
+                }
+            }
+        }
     }
 
     @media screen and (max-width: 768px) {
@@ -76,11 +185,11 @@
         .course-box1 {
             width: 100%;
             height: auto;
-            padding-bottom: 0;
         }
         .course-box2 {
             width: 100%;
             border-left: none;
+            margin-top: 1rem;
 
             h2 {
                 display: flex;
@@ -98,6 +207,15 @@
                 border-radius: 10px;
                 padding: 1rem;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .course {
+        .course-box1,
+        .course-box2 {
+            padding: 0;
         }
     }
 }

@@ -14,6 +14,7 @@ const AllClass = lazy(() => import("./pages/AllClass.jsx"));
 const AllBook = lazy(() => import("./pages/AllBooks.jsx"));
 const AllChapter = lazy(() => import("./pages/AllChapter.jsx"));
 const AllLecture = lazy(() => import("./pages/AllLecture.jsx"));
+const EnrolledClasses = lazy(() => import("./pages/EnrolledClasses.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 function App() {
@@ -23,12 +24,13 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <Suspense fallback={<Loader />}>
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route element={<ProtectedRoute user={user} />}>
             <Route path="/all-class" element={<AllClass />} />
+            <Route path="/enrolled-class" element={<EnrolledClasses />} />
             <Route path="/book/:id" element={<AllBook />} />
             <Route path="/book/chapter/:bookId" element={<AllChapter />} />
             <Route

@@ -15,7 +15,6 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { FiHome, FiLogOut } from "react-icons/fi";
 import { AiOutlineBook } from "react-icons/ai";
 import { GiBlackBook } from "react-icons/gi";
-import { CgProfile } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import { removeToken } from "../../features/authSlice";
 import toast from "react-hot-toast";
@@ -85,12 +84,8 @@ const Header = ({ user }) => {
                 {token && (
                   <>
                     <p onClick={onClose}>
-                      <CgProfile />
-                      <AllLinks url="/my-profile" title="My Profile" />
-                    </p>
-                    <p onClick={onClose}>
                       <GiBlackBook />
-                      <AllLinks url="/my-class" title="My Classes" />
+                      <AllLinks url="/enrolled-class" title="My Classes" />
                     </p>
                     <p onClick={onClose}>
                       <FiLogOut />

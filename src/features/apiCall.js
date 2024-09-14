@@ -244,12 +244,12 @@ export const getLecture = async (dispatch, setLoading, lectureId, token) => {
 
 export const getAllComments = async (
   dispatch,
-  setLoading,
+  setCommentLoad,
   lectureId,
   token
 ) => {
   try {
-    setLoading(true);
+    setCommentLoad(true);
     const { data } = await axiosInstance.get(
       `/api/comment/get-all-comments/${lectureId}`,
       {
@@ -260,7 +260,7 @@ export const getAllComments = async (
     );
 
     if (data.success) {
-      setLoading(false);
+      setCommentLoad(false);
       dispatch(
         setComments({
           comments: data.comments,
@@ -268,7 +268,7 @@ export const getAllComments = async (
       );
     }
   } catch (error) {
-    setLoading(false);
+    setCommentLoad(false);
     console.log(error);
     toast.error(error.response.data.message);
   }
