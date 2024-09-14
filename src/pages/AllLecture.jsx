@@ -31,11 +31,9 @@ import axiosInstance from "../utils/axiosUtils";
 
 const AllLecture = () => {
   const { lectures } = useSelector((state) => state.lecture);
-  const { token, role } = useSelector((state) => state.auth);
+  const { token, role, id } = useSelector((state) => state.auth);
   const { comments } = useSelector((state) => state.comment);
   const { chapter } = useSelector((state) => state.chapter);
-
-  console.log(comments);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
@@ -291,9 +289,11 @@ const AllLecture = () => {
                               <Button onClick={() => handleReply(item._id)}>
                                 Reply
                               </Button>
-                              <MdDelete
-                                onClick={() => handleDeleteComment(item._id)}
-                              />
+                              {id === item.user?._id && (
+                                <MdDelete
+                                  onClick={() => handleDeleteComment(item._id)}
+                                />
+                              )}
                             </div>
                           </div>
                           {item.replies && item.replies.length > 0
