@@ -10,6 +10,13 @@ Redux - For State Management
 Chakra-UI - For Web Page Styling
 ```
 
+## For Testing Using Admin Credentials 
+```
+email - rachitp509@gmail.com
+
+password - Rachit@123
+```
+
 ### Server Deployed Link - [https://ksolve-app.adaptable.app]
 
 ### Client Deployed Link - [https://ksolve-front-aibe.vercel.app]
