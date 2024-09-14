@@ -43,7 +43,7 @@ export const getClass = async (dispatch, setLoading, id, token) => {
       setLoading(false);
       dispatch(
         setClass({
-          class: data.class,
+          clas: data.clas,
         })
       );
     }
@@ -54,9 +54,8 @@ export const getClass = async (dispatch, setLoading, id, token) => {
   }
 };
 
-export const getEnrolledClass = async (dispatch, setLoading, id, token) => {
+export const getEnrolledClass = async (dispatch, token) => {
   try {
-    setLoading(true);
     const { data } = await axiosInstance.get(
       `/api/class/get-enrolled-classes`,
       {
@@ -67,7 +66,6 @@ export const getEnrolledClass = async (dispatch, setLoading, id, token) => {
     );
 
     if (data.success) {
-      setLoading(false);
       dispatch(
         setEnrolledClasses({
           enrolledClasses: data.enrolledClasses,
@@ -75,7 +73,6 @@ export const getEnrolledClass = async (dispatch, setLoading, id, token) => {
       );
     }
   } catch (error) {
-    setLoading(false);
     console.log(error);
     toast.error(error.response.data.message);
   }

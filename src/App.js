@@ -11,6 +11,9 @@ const Home = lazy(() => import("./pages/Home.jsx"));
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Register = lazy(() => import("./pages/Register.jsx"));
 const AllClass = lazy(() => import("./pages/AllClass.jsx"));
+const AllBook = lazy(() => import("./pages/AllBooks.jsx"));
+const AllChapter = lazy(() => import("./pages/AllChapter.jsx"));
+const AllLecture = lazy(() => import("./pages/AllLecture.jsx"));
 const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 function App() {
@@ -26,6 +29,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route element={<ProtectedRoute user={user} />}>
             <Route path="/all-class" element={<AllClass />} />
+            <Route path="/book/:id" element={<AllBook />} />
+            <Route path="/book/chapter/:bookId" element={<AllChapter />} />
+            <Route
+              path="/book/chapter/all-lecture/:chapterId"
+              element={<AllLecture />}
+            />
           </Route>
           <Route
             path="/login"

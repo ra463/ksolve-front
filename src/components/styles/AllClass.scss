@@ -1,0 +1,93 @@
+.allclass {
+    padding: 1rem;
+    padding-top: 5rem;
+    position: relative;
+
+    .add {
+        position: absolute;
+        top: 5.4rem;
+        right: 1rem;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .classes {
+        padding: 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .classcard {
+            width: 220px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid slategray;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+
+            img {
+                width: 220px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .btn {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                padding: 10px 0;
+                gap: 10px;
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-7px);
+            }
+        }
+    }
+    .books {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .bookcard {
+            display: flex;
+            width: 100%;
+            border: 1px solid slategray;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            padding: 10px;
+            align-items: center;
+            justify-content: space-between;
+
+            &:hover{
+                background: rgb(247, 247, 247);
+            }
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
